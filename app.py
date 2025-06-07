@@ -14,7 +14,6 @@ st.set_page_config(
 )
 
 # Funzione per salvare i dati in memoria
-@st.cache_data
 def save_data(df, file_type="palinsesto"):
     """
     Salva i dati in un file pickle per la persistenza
@@ -28,7 +27,6 @@ def save_data(df, file_type="palinsesto"):
         pickle.dump({"df": df}, f)
 
 # Funzione per caricare i dati dalla memoria
-@st.cache_data
 def load_data(file_type="palinsesto"):
     """
     Carica i dati dal file pickle se esiste
@@ -51,7 +49,6 @@ def get_table_download_link(df, filename, text):
     return href
 
 # Funzione per caricare il file Excel
-@st.cache_data
 def load_excel_file(uploaded_file, sheet_name=None):
     try:
         # Carica il file Excel direttamente con pandas
